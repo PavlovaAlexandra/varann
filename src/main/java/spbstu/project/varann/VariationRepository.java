@@ -1,17 +1,9 @@
 package spbstu.project.varann;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface VariationRepository extends CrudRepository {
-    List<Variation> findByChrom(String chrom);
-
-    List<Variation> findByPos(int pos);
-
-    List<Variation> findByRef(String ref);
-
-    List<Variation> findByAlt(String alt);
-
-    List<Variation> findByInfo(String info);
+@Repository
+public interface VariationRepository extends JpaRepository<Variation, VariationID> {
+    Variation findByChromAndPosAndRefAndAlt(String chrom, int pos, String ref, String alt);
 }

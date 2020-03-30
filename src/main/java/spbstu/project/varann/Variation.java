@@ -1,66 +1,40 @@
 package spbstu.project.varann;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 
 @Entity
 @IdClass(VariationID.class)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Variation {
+    @Id
+    @Getter
+    @Setter
+    private String chrom;
 
-    @Id private String chrom;
-    @Id private int pos;
-    @Id private String ref;
-    @Id private String alt;
+    @Id
+    @Getter
+    @Setter
+    private int pos;
+
+    @Id
+    @Getter
+    @Setter
+    private String ref;
+
+    @Id
+    @Getter
+    @Setter
+    private String alt;
+
+    @Getter
+    @Setter
     private String info;
-
-    protected Variation() {}
-
-    public Variation(String chrom, int pos, String ref, String alt, String info) {
-        this.chrom = chrom;
-        this.pos = pos;
-        this.ref = ref;
-        this.alt = alt;
-        this.info = info;
-    }
-
-    public String getChrom() {
-        return chrom;
-    }
-
-    public void setChrom(String chrom) {
-        this.chrom = chrom;
-    }
-
-    public int getPos() {
-        return pos;
-    }
-
-    public void setPos(int pos) {
-        this.pos = pos;
-    }
-
-    public String getRef() {
-        return ref;
-    }
-
-    public void setRef(String ref) {
-        this.ref = ref;
-    }
-
-    public String getAlt() {
-        return alt;
-    }
-
-    public void setAlt(String alt) {
-        this.alt = alt;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
 }

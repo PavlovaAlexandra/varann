@@ -1,34 +1,23 @@
 package spbstu.project.varann;
 
-public class VariationID {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
+@NoArgsConstructor
+@AllArgsConstructor
+public class VariationID implements Serializable {
+    @Getter
     private String chrom;
+
+    @Getter
     private int pos;
+
+    @Getter
     private String ref;
+
+    @Getter
     private String alt;
-
-    private VariationID() {}
-
-    public VariationID(String chrom, int pos, String ref, String alt) {
-        this.chrom = chrom;
-        this.pos = pos;
-        this.ref = ref;
-        this.alt = alt;
-    }
-
-    public String getChrom() {
-        return chrom;
-    }
-
-    public int getPos() {
-        return pos;
-    }
-
-    public String getRef() {
-        return ref;
-    }
-
-    public String getAlt() {
-        return alt;
-    }
 }
