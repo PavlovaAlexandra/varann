@@ -8,16 +8,10 @@ import java.io.Serializable;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 public class VariationID implements Serializable {
-    @Getter
     private String chrom;
-
-    @Getter
     private int pos;
-
-    @Getter
     private String ref;
-
-    @Getter
     private String alt;
 }

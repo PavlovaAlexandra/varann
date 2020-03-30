@@ -13,28 +13,20 @@ import javax.persistence.IdClass;
 @IdClass(VariationID.class)
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Variation {
     @Id
-    @Getter
-    @Setter
     private String chrom;
 
     @Id
-    @Getter
-    @Setter
     private int pos;
 
     @Id
-    @Getter
-    @Setter
     private String ref;
 
     @Id
-    @Getter
-    @Setter
     private String alt;
 
-    @Getter
-    @Setter
     private String info;
 }
